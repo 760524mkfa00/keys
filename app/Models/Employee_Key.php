@@ -1,6 +1,6 @@
 <?php
 
-namespace Keys;
+namespace Keys\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

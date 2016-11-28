@@ -18,7 +18,7 @@ class CreateKeysTable extends Migration
             $table->string('code')->unique();
             $table->string('type')->default('key');
             $table->string('description');
-            $table->string('active', 3)->default('yes');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }
