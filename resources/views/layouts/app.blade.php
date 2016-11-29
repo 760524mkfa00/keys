@@ -29,5 +29,6 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    @yield('footer')
 </body>
 </html>

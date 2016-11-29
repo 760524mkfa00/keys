@@ -27,6 +27,13 @@ class Key extends Model
 
     public function employees()
     {
-        return $this->belongsToMany(Employee::class());
+        return $this->belongsToMany('Keys\Models\Employee', 'employee_key')->withPivot('date_out', 'expected_return_date')->withTimestamps();
+    }
+
+    public function listKeys()
+    {
+
+        return array_prepend(array_pluck(Key::all(), 'code', 'id'), 'Please Select Key', 0);
+
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEmployeeKeysTable extends Migration
+class CreateEmployeeKeyTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateEmployeeKeysTable extends Migration
      */
     public function up()
     {
-        Schema::create('employee__keys', function (Blueprint $table) {
+        Schema::create('employee_key', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('employee_id')->unsigned();
             $table->integer('key_id')->unsigned();
             $table->date('date_out');
-            $table->date('expected_return_date');
+            $table->date('expected_return_date')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateEmployeeKeysTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('employee__keys');
+        Schema::dropIfExists('employee_key');
     }
 }
