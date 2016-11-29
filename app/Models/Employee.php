@@ -7,6 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 class Employee extends Model
 {
 
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'expected_return_date'
+    ];
+
     protected $table ='employees';
 
     protected $fillable = [
@@ -23,6 +34,8 @@ class Employee extends Model
         'notes',
         'expected_return_date'
     ];
+
+
 
     /**
      * The attributes that should be casted to native types.
