@@ -3,6 +3,7 @@
 namespace Keys\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Employee extends Model
 {
@@ -65,7 +66,7 @@ class Employee extends Model
     public function setExpectedReturnDateAttribute($value)
     {
 
-        $this->attributes['expected_return_date'] = strlen($value)? \Carbon::createFromFormat('Y-m-d', $value) : null;
+        $this->attributes['expected_return_date'] = strlen($value)? Carbon::createFromFormat('Y-m-d', $value) : null;
     }
 
 }
