@@ -20,10 +20,6 @@
                             <label for="id">Code: </label>
                                 {{ Form::select('keys', $keys, null, ['class' => 'form-control', 'id' => 'key_id']) }}
                         </div>
-                        <div class="form-group">
-                            <label for="expected_return_date">Expected Return Date: </label>
-                            <input type="date" class="form-control" id="expected_return_date" name="expected_return_date" placeholder="Expected Return Date...">
-                        </div>
                     </div>
                 </div>
 

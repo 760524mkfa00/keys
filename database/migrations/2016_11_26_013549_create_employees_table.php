@@ -26,6 +26,7 @@ class CreateEmployeesTable extends Migration
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->string('notes')->nullable();
+            $table->date('expected_return_date')->nullable();
             $table->timestamps();
         });
     }

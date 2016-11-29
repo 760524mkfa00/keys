@@ -20,7 +20,8 @@ class Employee extends Model
         'postal_code',
         'email',
         'phone',
-        'notes'
+        'notes',
+        'expected_return_date'
     ];
 
     /**
@@ -34,6 +35,24 @@ class Employee extends Model
 
     public function keys()
     {
-        return $this->belongsToMany('Keys\Models\Key', 'employee_key')->withPivot('date_out', 'expected_return_date')->withTimestamps();
+        return $this->belongsToMany('Keys\Models\Key', 'employee_key')->withPivot('date_out')->withTimestamps();
     }
+
+    public function getPaginated(array $params)
+    {
+        if($params['sortBy'])
+        {
+            return Employee::orderBy($params['sortBy'], $params['direction'])
+                ->paginate(15);
+        }
+
+        return Employee::paginate(15);
+    }
+
+    public function setExpectedReturnDateAttribute($value)
+    {
+
+        $this->attributes['expected_return_date'] = strlen($value)? \Carbon::createFromFormat('Y-m-d', $value) : null;
+    }
+
 }

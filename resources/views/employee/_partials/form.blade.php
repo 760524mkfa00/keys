@@ -39,3 +39,7 @@
     <label for="notes">Notes: </label>
     <textarea class="form-control" id="notes" name="notes" placeholder="Notes..." rows="3">{{ old('notes', $employee->notes ?? null) }}</textarea>
 </div>
+<div class="form-group">
+    <label for="expected_return_date">Expected Return Date for Keys: </label>
+    <input type="date" class="form-control" id="expected_return_date" name="expected_return_date" placeholder="Expected Return Date..." value="{{ old('expected_return_date', $employee->expected_return_date ?? null) }}">
+</div>

@@ -27,7 +27,7 @@ class Key extends Model
 
     public function employees()
     {
-        return $this->belongsToMany('Keys\Models\Employee', 'employee_key')->withPivot('date_out', 'expected_return_date')->withTimestamps();
+        return $this->belongsToMany('Keys\Models\Employee', 'employee_key')->withPivot('date_out')->withTimestamps();
     }
 
     public function listKeys()

@@ -18,7 +18,6 @@ class CreateEmployeeKeyTable extends Migration
             $table->integer('employee_id')->unsigned();
             $table->integer('key_id')->unsigned();
             $table->date('date_out');
-            $table->date('expected_return_date')->nullable();
             $table->timestamps();
         });
     }

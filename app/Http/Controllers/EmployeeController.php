@@ -9,21 +9,32 @@ use Keys\Models\Key;
 class EmployeeController extends Controller
 {
 
+    protected $employees;
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Employee $employee)
     {
         $this->middleware('auth');
+
+        $this->employees = $employee;
     }
 
 
     public function index()
     {
+
+
+        $sortBy = \Request::get('sortBy');
+        $direction = \Request::get('direction');
+
+        $employee = $this->employees->getPaginated(compact('sortBy','direction', 'search'));
+
         return view('employee.index')
-            ->withData(Employee::all());
+            ->withData($employee);
     }
 
     public function create()
@@ -78,10 +89,7 @@ class EmployeeController extends Controller
 
         $keys = $request->all();
 
-        ($keys['expected_return_date']) ? $keys['expected_return_date'] = $keys['expected_return_date'] : $keys['expected_return_date'] = null;
-
-
-        $employee->keys()->attach($keys['key_id'], ['date_out' => date('Y-m-d'), 'expected_return_date' => $keys['expected_return_date']]);
+        $employee->keys()->attach($keys['key_id'], ['date_out' => date('Y-m-d')]);
 
         $info = ['message' => 'Cannot add the same service type twice. '];
 
