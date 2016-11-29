@@ -32,7 +32,7 @@
                                         <td>{{ $employee->first_name }}</td>
                                         <td>{{ $employee->last_name }}</td>
                                         <td>{{ $employee->notes }}</td>
-                                        <td>{{ $employee->expected_return_date }}</td>
+                                        <td>{{ (isset($employee->expected_return_date)) ? $employee->expected_return_date->toFormattedDateString() : null}}</td>
                                         <td>{{ $employee->keys()->count() }}</td>
                                         <td><a href="{{ url('employee/edit', [$employee->id]) }}">Edit</a></td>
                                     </tr>
