@@ -69,4 +69,10 @@ class Employee extends Model
         $this->attributes['expected_return_date'] = strlen($value)? Carbon::createFromFormat('Y-m-d', $value) : null;
     }
 
+    public function setCompanyNameAttribute($value)
+    {
+
+        $this->attributes['company_name'] = strlen($value)? $value : null;
+    }
+
 }
