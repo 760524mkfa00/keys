@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Key extends Model
 {
 
+    protected $table = 'keys';
+
     protected $fillable = [
         'code',
         'type',

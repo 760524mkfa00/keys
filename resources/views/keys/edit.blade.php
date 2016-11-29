@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Employees</div>
+                    <div class="panel-heading">Keys</div>
 
                     <div class="panel-body">
 
@@ -15,14 +15,14 @@
                                 @include('./_partials/message')
                             </div>
                         </div>
-{{ $employee->keys }}
+
                         <div class="col-md-12">
-                            <form action="{{ route('employee.update',$employee->id) }}" method="post" class="form-horizontal">
+                            <form action="{{ route('key.update',$key->id) }}" method="post" class="form-horizontal">
                                 <input type="hidden" name="_method" value="PATCH">
-                                @include('./employee/_partials/form')
+                                @include('./keys/_partials/form')
                                 <div class="row">
-                                    <button class="btn btn-default" type="submit">Update Employee</button>
-                                    <a class="btn btn-default" href="{{ route('employee') }}">Back</a>
+                                    <button class="btn btn-default" type="submit">Update Key</button>
+                                    <a class="btn btn-default" href="{{ route('key') }}">Back</a>
                                 </div>
                             </form>
                         </div>

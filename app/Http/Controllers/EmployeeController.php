@@ -47,6 +47,9 @@ class EmployeeController extends Controller
 
     public function edit(Employee $employee)
     {
+//        $data = Employee::with('keys')->findOrFail($employee->id)->get();
+//        dd($data);
+
         return view('employee.edit')
             ->withEmployee($employee);
     }
