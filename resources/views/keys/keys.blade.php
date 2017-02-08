@@ -24,6 +24,8 @@
                 @endforeach
                 </tbody>
             </table>
+            <a class="btn btn-default" data-toggle="modal" data-target="#attachModal" href="#" data-info="{{ $employee }}">Add Key</a>
+            <a class="btn btn-default" href="{{ route('employee') }}">Back</a>
         </div>
     </div>
 </div>

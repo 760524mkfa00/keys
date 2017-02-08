@@ -4,7 +4,8 @@
     <select class="form-control" id="type" name="type" placeholder="Select Type..." value="{{ old('type', $key->type ?? null) }}" required>
         <option value="">Select Type</option>
         <option value="Key" {{ (old('type', $key->type ?? null)  == "Key") ? 'selected="selected"' : null }}>Key</option>
-        <option value="Fob" {{ (old('type', $key->type ?? null)  == "Fob") ? 'selected="selected"' : null }}>Fob</option>
+        <option value="White Fob" {{ (old('type', $key->type ?? null)  == "Fob") ? 'selected="selected"' : null }}>White Fob</option>
+        <option value="Grey Fob" {{ (old('type', $key->type ?? null)  == "Fob") ? 'selected="selected"' : null }}>Grey Fob</option>
     </select>
 </div>
 <div class="form-group">

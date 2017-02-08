@@ -23,7 +23,6 @@
                                 <div class="row">
                                     <button class="btn btn-default" type="submit">Update Employee</button>
                                     <a class="btn btn-default" href="{{ route('employee') }}">Back</a>
-                                    <a class="btn btn-default" data-toggle="modal" data-target="#attachModal" href="#" data-info="{{ $employee }}">Add Key</a>
                                 </div>
                             </form>
                         </div>
