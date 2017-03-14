@@ -33,7 +33,8 @@ class Key extends Model
     public function listKeys()
     {
 
-        return array_prepend(array_pluck(Key::all(), 'code', 'id'), 'Please Select Key', 0);
+        $data = Key::orderBy('code', 'asc')->get();
+        return array_prepend(array_pluck($data, 'code', 'id'), 'Please Select Key', 0);
 
     }
 }
