@@ -22,6 +22,7 @@
                                 @include('./employee/_partials/form')
                                 <div class="row">
                                     <button class="btn btn-default" type="submit">Update Employee</button>
+                                    <a class="btn btn-danger" href="{{ route('employee.delete', $employee->id) }}">Remove Employee</a>
                                     <a class="btn btn-default" href="{{ route('employee') }}">Back</a>
                                 </div>
                             </form>

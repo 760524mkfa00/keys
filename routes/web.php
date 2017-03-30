@@ -24,6 +24,7 @@ Route::get('employee/edit/{employee}', ['as' => 'employee.edit', 'uses' => 'Empl
 Route::patch('employee/update/{employee}', ['as' => 'employee.update', 'uses' => 'EmployeeController@update']);
 Route::post('employee/attach/key/{employee}', ['as' => 'employee.attach.key', 'uses' => 'EmployeeController@attach']);
 Route::get('employee/detach/key/{employee}/{key}', ['as' => 'employee.edit', 'uses' => 'EmployeeController@detach']);
+Route::get('employee/{employee}/remove', ['as' => 'employee.delete', 'uses' => 'EmployeeController@destroy']);
 
 Route::get('key', ['as' => 'key', 'uses' => 'KeysController@index']);
 Route::get('key/create', ['as' => 'key.create', 'uses' => 'KeysController@create']);

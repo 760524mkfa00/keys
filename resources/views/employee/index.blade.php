@@ -39,8 +39,19 @@
                                 @endforeach
                             </tbody>
                         </table>
+<div class="row">
+    <div class="col-md-12">
+        {{ $data->links() }}
+    </div>
 
-                        <a class="btn btn-default" href="{{ route('employee.create') }}">Add Employee</a>
+</div>
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <a class="btn btn-default" href="{{ route('employee.create') }}">Add Employee</a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

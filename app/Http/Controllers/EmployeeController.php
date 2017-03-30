@@ -68,7 +68,7 @@ class EmployeeController extends Controller
     {
 
         $this->validate($request, [
-            'company_name' => 'max:255|unique:employees,id,' . $employee->id,
+//            'company_name' => 'max:255|unique:employees,id,' . $employee->id,
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required_without:company_name',
@@ -105,6 +105,19 @@ class EmployeeController extends Controller
         $employee->keys()->detach($key);
 
         return redirect()->back()->with('message', 'Key Removed.');
+    }
+
+    public function destroy(Employee $employee)
+    {
+        if($employee->keys()->count() > 0)
+        {
+            return back()->withErrors('Employee has keys attached. Please remove keys before deleting Employee.');
+        }
+
+        $employee->delete();
+
+        return redirect()->route('employee')->with('message', 'Employee deleted.');
+
     }
 
 
